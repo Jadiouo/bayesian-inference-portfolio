@@ -7,6 +7,12 @@ tags:
   - KalmanFilter
 prev: "[[1-1_四個項的認識論意義]]"
 next: "[[1-3_邊際似然的困境]]"
+type: course-card
+created: 2026-07-28
+card_no: "1-2"
+theme_no: 一
+read: false
+projects: [E1, C2]
 ---
 
 # 1-2 · 序貫更新與 Kalman Filter
@@ -256,6 +262,19 @@ IMU 靜止在桌上,accelerometer 噪音大($R$ 大),gyroscope 乾淨($R$ 小)�
 > ⚠️ 補充:KF 失效的條件有**兩個**,別只記非線性 ——
 > - **線性假設破掉** → EKF/UKF 可救(仍然高斯)
 > - **高斯假設破掉**(outlier、多峰) → **連 EKF/UKF 都救不了**,要用 Robust KF 或 Particle Filter
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[E1 貝葉斯最優化]] —— BO 就是序貫更新 + 決策理論：每次評估後更新 GP 後驗，再決定下一點
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/E1_bayesian_optimization)）
+> - [[C2 疾病傳播 SIR]] —— 時變 β 的 random walk 先驗就是動態模型，SIR 是狀態空間模型的一種
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/C2_epidemic_sir)）
+
+> [!note] ⚠️ 這張卡片與 [[Perception-Aware Multi-Robot Exploration]] 直接相通：關聯論文 [[Paper 1.A]] 做的是 **sensor-only accelerometer-bias estimation**，而本卡的 $Q$/$R$ 調參、filter divergence、「相信錯人」講的正是同一件事。
 
 ---
 

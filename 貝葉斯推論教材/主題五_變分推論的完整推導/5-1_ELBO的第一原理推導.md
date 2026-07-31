@@ -7,6 +7,12 @@ tags:
   - ELBO
 prev: "[[4-3_MCMC的核心直覺]]"
 next: "[[5-2_MeanField與CAVI]]"
+type: course-card
+created: 2026-07-28
+card_no: "5-1"
+theme_no: 五
+read: false
+projects: [S1]
 ---
 
 # 5-1 · ELBO 的第一原理推導
@@ -266,6 +272,15 @@ ELBO 兩個項各在做什麼?只有重建項會怎樣?
 >   3. 訓練 loss 下降(VAE 的 loss = $-$ELBO)
 >
 > ⚠️ 注意:**你不能從 ELBO 的值推斷 KL 的絕對值** —— 因為 $\log p(D)$ 是未知常數,你不知道天花板在哪。但你知道 ELBO 越大,KL 越小。
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[S1 VAE 異常偵測]] —— ELBO 拆成重建項與 KL 各自獨立驗證；並實測「收緊下界（IWAE）對下游任務完全無效」（0.2σ）
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/S1_vae_anomaly)）
 
 ---
 

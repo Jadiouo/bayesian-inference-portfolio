@@ -6,6 +6,12 @@ tags:
   - 主題五
 prev: "[[5-1_ELBO的第一原理推導]]"
 next: "[[5-3_重參數化技巧]]"
+type: course-card
+created: 2026-07-28
+card_no: "5-2"
+theme_no: 五
+read: false
+projects: [B1]
 ---
 
 # 5-2 · Mean Field VI 與 CAVI
@@ -249,6 +255,19 @@ EM 是 CAVI 的特例(把 θ 當 δ 分佈)。VI 比 EM 多給了什麼?
 > | 預測 | plug-in(**過度自信**) | 後驗預測分佈(誠實) |
 >
 > **這連回 [[3-2_後驗預測分佈]]**:EM 用一個點做預測,只反映 Aleatoric;VI 用整個分佈,同時反映 Epistemic。
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[B1 凌日光曲線參數估計]] —— **這張卡片的警告在這裡應驗**：corr(rp,a)=−0.86、corr(a,b)=−0.94，所以 B1 用 emcee 而不是 VI
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/B1_transit_fitting)）
+
+> [!warning] 落差：CAVI 尚未實作
+>
+> CAVI 本身還沒實作。最省力的接法：在 [[C1 階層模型與部分匯聚]] 手刻 CAVI，對照 NUTS 的後驗，順便實測 Mean Field 對階層模型低估多少。
 
 ---
 

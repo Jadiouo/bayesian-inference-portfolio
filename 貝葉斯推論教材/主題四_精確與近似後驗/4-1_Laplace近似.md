@@ -6,6 +6,12 @@ tags:
   - 主題四
 prev: "[[3-3_可信區間vs信賴區間]]"
 next: "[[4-2_VI與MCMC兩條路]]"
+type: course-card
+created: 2026-07-28
+card_no: "4-1"
+theme_no: 四
+read: false
+projects: []
 ---
 
 # 4-1 · Laplace 近似
@@ -278,6 +284,14 @@ Laplace 只用了兩個量(MAP 和 Hessian)。為什麼這兩個量足夠?多了
 > ⚠️ **關鍵提醒**:EKF 處理的是**非線性**,不是**非高斯**。它只是把彎的路面壓平,噪音模型仍然是高斯。**薄尾的問題一個字都沒動到。**
 >
 > **解法**:Particle Filter(動態)/ MCMC(靜態)—— **都是放棄高斯假設的方向**。
+
+---
+
+## 🧪 我的實作對應
+
+> [!warning] 落差：Laplace 近似 尚未實作
+>
+> 最省力的接法：拿 [[A1 診斷決策系統]] 的邏輯迴歸後驗，比較 Laplace vs NUTS vs plug-in 三者的預測機率與 ECE。資料與 NUTS 基準都是現成的，只要多寫一個 Hessian。
 
 ---
 

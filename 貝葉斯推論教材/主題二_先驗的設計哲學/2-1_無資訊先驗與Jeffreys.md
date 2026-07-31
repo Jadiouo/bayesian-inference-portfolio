@@ -6,6 +6,12 @@ tags:
   - 主題二
 prev: "[[1-3_邊際似然的困境]]"
 next: "[[2-2_共軛先驗與指數族]]"
+type: course-card
+created: 2026-07-28
+card_no: "2-1"
+theme_no: 二
+read: false
+projects: [A1, A2]
 ---
 
 # 2-1 · 無資訊先驗與 Jeffreys Prior
@@ -230,6 +236,17 @@ $$\log\sigma\sim\mathcal{N}(\log 3, 1)$$
 > - **A → Jeffreys Prior**。低維、有明確結構(Bernoulli)、想宣稱無偏 —— 三個條件同時滿足,Jeffreys 是量身定做的。結果是 $\text{Beta}(1/2,1/2)$。
 > - **B → 弱資訊高斯 $\mathcal{N}(0,\sigma_0^2 I)$**。**不是均勻!** 均勻在高維無法歸一化且極度病態。高斯先驗是 proper、對應 L2、計算可行。
 > - **C → 對數常態**:$\log\sigma\sim\mathcal{N}(\log 3, 1)$。高斯先驗會把機率分給負數區,浪費在不可能的地方。
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[A1 診斷決策系統]] —— 標準化後用 β~N(0, 2.5) 的弱資訊先驗，並做先驗敏感度分析
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/A1_diagnostic_decision)）
+> - [[A2 貝葉斯生存分析]] —— 先驗放寬 8 倍，β_pnodes 只移 2.78%——參數估計對先驗不敏感
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/A2_survival_analysis)）
 
 ---
 

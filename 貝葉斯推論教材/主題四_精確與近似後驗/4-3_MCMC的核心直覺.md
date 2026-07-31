@@ -7,6 +7,12 @@ tags:
   - MCMC
 prev: "[[4-2_VI與MCMC兩條路]]"
 next: "[[5-1_ELBO的第一原理推導]]"
+type: course-card
+created: 2026-07-28
+card_no: "4-3"
+theme_no: 四
+read: false
+projects: [C2, A2, B1, C1]
 ---
 
 # 4-3 · MCMC 的核心直覺
@@ -274,6 +280,21 @@ Particle Filter 會不會也遇到「卡在一個峰」的問題?採樣派最怕
 > 1. **跨不過低谷**(MCMC 嚴重,PF 較輕)→ 多鏈、Parallel Tempering
 > 2. **樣本多樣性喪失**(MCMC 自相關;PF 粒子坍塌)→ 重採樣、算 ESS
 > 3. **高維詛咒**(兩者都有)→ HMC(用梯度)或改用 VI
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[C2 疾病傳播 SIR]] —— 收斂診斷全綠（0 divergences、r̂=1.000）卻得到荒謬解——**診斷檢查的是取樣器，不檢查模型**
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/C2_epidemic_sir)）
+> - [[A2 貝葉斯生存分析]] —— PyMC 預設 `init="jitter+adapt_diag"` 讓單一鏈整條卡死，只影響部分 seed
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/A2_survival_analysis)）
+> - [[B1 凌日光曲線參數估計]] —— 強簡併要換 emcee 的 DEMove，預設 StretchMove 走不動
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/B1_transit_fitting)）
+> - [[C1 階層模型與部分匯聚]] —— 非中心化參數化：113 divergences → 0
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/C1_hierarchical_pooling)）
 
 ---
 

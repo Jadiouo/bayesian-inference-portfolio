@@ -7,6 +7,12 @@ tags:
   - Dropout
 prev: "[[6-1_貝葉斯神經網路]]"
 next: "[[6-3_兩種不確定性]]"
+type: course-card
+created: 2026-07-28
+card_no: "6-2"
+theme_no: 六
+read: false
+projects: [A3]
 ---
 
 # 6-2 · MC Dropout = 貝葉斯近似
@@ -315,6 +321,15 @@ Gal 證明了「Dropout 訓練 = 變分推論」。說明這個對應的兩個�
 >   *(補充:真實自駕車實務上還會考慮「只在關鍵時刻啟用」或改用 SWAG 等單次 forward 的方法)*
 > - **B → Deep Ensemble**。有預算、有時間、要最好的校準品質。
 > - **C → MC Dropout**。**記憶體受限是關鍵** —— Ensemble 要存 5–10 個模型,手機裝不下。用時間換空間。
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[A3 影像不確定性與 OOD]] —— T=50 的實作。踩到 `model.train()` 連帶開 BatchNorm 的坑：預測會依賴同 batch 的其他樣本，還會造成測試集洩漏
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/A3_image_uncertainty_ood)）
 
 ---
 

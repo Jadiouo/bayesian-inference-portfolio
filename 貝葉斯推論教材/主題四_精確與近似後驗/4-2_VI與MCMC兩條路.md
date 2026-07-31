@@ -6,6 +6,12 @@ tags:
   - 主題四
 prev: "[[4-1_Laplace近似]]"
 next: "[[4-3_MCMC的核心直覺]]"
+type: course-card
+created: 2026-07-28
+card_no: "4-2"
+theme_no: 四
+read: false
+projects: [S1, B1]
 ---
 
 # 4-2 · VI 與 MCMC:兩條路
@@ -249,6 +255,19 @@ Particle Filter 屬於哪一條路?為什麼它能處理 EKF 處理不了的場�
 > (EKF 處理非線性但強制高斯,所以 IMU 鋸齒會崩)
 >
 > **代價**:每時刻要追蹤幾百到幾千個粒子並重採樣,計算成本遠高於 KF。這正是採樣派的標準特性 —— **精度高,但計算貴**。
+
+---
+
+## 🧪 我的實作對應
+
+> [!example] 這張卡片的理論，在作品集裡的實測
+>
+> - [[S1 VAE 異常偵測]] —— 十個專案裡**唯一**走 VI 的；其餘九個都是 MCMC / nested sampling / GP
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/S1_vae_anomaly)）
+> - [[B1 凌日光曲線參數估計]] —— 強簡併後驗 corr(a,b)=−0.94，正是 VI 這條路會失敗的場景
+>   （[程式碼與完整敘事](https://github.com/Jadiouo/bayesian-inference-portfolio/tree/main/B1_transit_fitting)）
+
+> [!note] 作品集的六種推論工具與各自的失效邊界，整理在 `學習筆記.md` §4。
 
 ---
 
