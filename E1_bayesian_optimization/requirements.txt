@@ -1,0 +1,7 @@
+# E1 · 貝葉斯最優化（計劃書 §6 專案 E1）
+# GP 手刻（理解機制）；scikit-optimize 為對照 / 選用。
+numpy
+scipy
+matplotlib
+scikit-learn
+scikit-optimize

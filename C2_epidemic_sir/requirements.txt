@@ -1,0 +1,10 @@
+# C2 · 疾病傳播貝葉斯建模（計劃書 §4 專案 C2）
+#
+# SIR 用 pytensor.scan 手刻（每日離散化），不用 pymc.ode ——
+# 後者在 108 天 × 108 個時變參數的模型上跑不動（見 src/sir.py 的說明）。
+pymc
+arviz<1
+numpy
+pandas               # JHU 寬表整理、週重採樣、day-of-week 標記
+scipy                # stats.linregress（不確定性 vs 資料量的迴歸）
+matplotlib

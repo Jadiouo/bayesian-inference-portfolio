@@ -1,0 +1,14 @@
+# A3 · 醫學影像不確定性 / OOD（計劃書 §2 專案 A3）
+#
+# torch 與 torchvision 都必須從 CUDA 12.8 索引裝（對應 Blackwell / RTX 5070 Ti）：
+#   pip install torch      --index-url https://download.pytorch.org/whl/cu128
+#   pip install --force-reinstall --no-deps torchvision \
+#       --index-url https://download.pytorch.org/whl/cu128
+# ⚠️ 若讓 medmnist 從預設 PyPI 拉 torchvision，會與 cu128 的 torch 產生 ABI 衝突
+#    （症狀：`operator torchvision::nms does not exist`）。詳見根目錄 README。
+torch
+torchvision          # FashionMNIST（簡單 OOD 對照組）
+medmnist             # PneumoniaMNIST / DermaMNIST / PathMNIST
+scikit-learn         # AUROC / average precision
+numpy
+matplotlib

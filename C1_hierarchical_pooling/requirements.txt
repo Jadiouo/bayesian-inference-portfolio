@@ -1,0 +1,6 @@
+# C1 · 階層模型與部分匯聚（計劃書 §4 專案 C1）
+pymc
+arviz<1
+numpy
+pandas
+matplotlib

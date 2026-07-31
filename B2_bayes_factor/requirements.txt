@@ -1,0 +1,7 @@
+# B2 · 貝氏因子模型比較（計劃書 §3 專案 B2）
+ultranest          # nested sampling → 直接算 log Z（邊際似然）
+lightkurve         # Kepler 光曲線下載與去趨勢
+batman-package     # 凌日物理模型（主食 + 次食）
+numpy
+scipy
+matplotlib

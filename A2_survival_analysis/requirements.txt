@@ -1,0 +1,10 @@
+# A2 · 貝葉斯生存分析（計劃書 §2 專案 A2）
+pymc
+arviz<1
+lifelines           # GBSG2 資料、Cox / Weibull AFT / Kaplan–Meier / Nelson–Aalen 對照
+scikit-survival     # IPCW Brier score、C-index（刪失下的正確評估）
+scikit-learn        # StratifiedKFold（5-fold OOF）
+numpy
+scipy
+matplotlib
+pandas

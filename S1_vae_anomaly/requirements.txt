@@ -1,0 +1,11 @@
+# S1 · VAE 異常偵測（補主題五 VI/ELBO，計劃書 §7）
+# torch 請以 CUDA 12.8 版安裝（對應 Blackwell GPU，見根目錄 README）：
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch
+medmnist
+numpy
+matplotlib
+# Pillow：把每張影像做 PNG 無損壓縮，位元數當「無模型的複雜度代理」
+# （evaluate.png_bits → 複雜度混淆分析與 S = −ELBO − L(x) 校正分數）。
+# medmnist 已相依 Pillow，這裡明列是因為本專案**直接**用到它。
+Pillow

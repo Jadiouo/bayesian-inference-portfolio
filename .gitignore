@@ -1,0 +1,43 @@
+# ── Python ──
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+
+# ── data/ 一律不進版控 ────────────────────────────────────────────────
+# 白名單制：預設排除 data/ 底下的一切，只放行說明文件與目錄佔位檔。
+# 這樣寫是刻意的 —— 用副檔名黑名單會漏（實際漏過 UCI 的 .data 檔），
+# 而且未來任何新資料格式都要記得補規則。白名單不會漏。
+#
+# 所有資料集都能用程式自動重新取得，取得方式與授權見 data/README.md。
+data/*
+!data/README.md
+!data/*/
+data/*/*
+!data/*/.gitkeep
+
+# ── 模型權重 / 快取 ───────────────────────────────────────────────────
+*.pt
+*.pth
+*.ckpt
+*.h5
+*.hdf5
+*.zip
+*.gz
+*.parquet
+# torchvision 的 MNIST 系列解壓後是無副檔名的 IDX 檔（A3 的 FashionMNIST，約 82 MB）
+*-idx[0-9]-ubyte
+lightkurve-cache/
+mldata/
+
+# ── figures/ 內的圖表「要」進版控（作品集需要），故不忽略 ──
+
+# ── 系統 ──
+.DS_Store
+.env
+*.log

@@ -1,0 +1,8 @@
+# D1 · 貝葉斯 A/B 測試（計劃書 §5 專案 D1）
+# Beta-Binomial 封閉解即可，不需 MCMC；pymc 為選用（進階建模）。
+numpy
+scipy
+matplotlib
+pandas
+# pymc
+# arviz<1

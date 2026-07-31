@@ -1,0 +1,10 @@
+# B1 · 凌日光曲線貝葉斯參數估計（計劃書 §3 專案 B1）
+lightkurve
+batman-package
+pymc
+arviz<1
+emcee
+corner
+numpy
+scipy
+matplotlib

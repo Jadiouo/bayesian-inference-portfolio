@@ -1,0 +1,51 @@
+# 貝葉斯推論 · 跨領域實作訓練計劃 — conda 環境規格
+# ---------------------------------------------------------------
+# 建立：conda env create -f environment.yml
+# 啟用：conda activate bayes
+# 更新：conda env update -f environment.yml --prune
+#
+# 註：以下四個套件在環境建立「之後」以 pip 另裝（見 README「環境建立」）：
+#   - torch        → CUDA 12.8 版，對應本機 Blackwell GPU（RTX 5070 Ti / sm_120）
+#   - medmnist     → 僅 PyPI 提供
+#   - batman-package → 僅 PyPI 提供（import 名為 batman）
+#   - scikit-optimize → 最後單獨裝，避免相依衝突污染核心環境
+# ---------------------------------------------------------------
+name: bayes
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+
+  # ── 核心科學計算 ──
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+
+  # ── 貝葉斯主力（大量使用）──
+  - pymc
+  # arviz 釘在 <1：arviz 1.x 是 DataTree 重寫版，移除了 pymc 5.26 需要的頂層
+  # concat，且計劃書全部程式碼（az.summary/plot_posterior/compare）皆為 0.x API。
+  - arviz<1
+
+  # ── 領域 A：醫療（生存分析）──
+  - lifelines
+  - scikit-survival
+
+  # ── 領域 B：天文（MCMC / nested sampling）──
+  - lightkurve
+  - ultranest
+  - emcee
+  - corner
+
+  # ── Notebook / 工具 ──
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - ipywidgets
+  - tqdm
+  - h5py
+  - pillow
+  - pip

@@ -1,0 +1,8 @@
+# A1 · 診斷決策系統（計劃書 §2 專案 A1）
+pymc
+arviz<1
+scikit-learn
+numpy
+scipy
+matplotlib
+pandas
